@@ -53,7 +53,7 @@ def multiple_ints(first_value: int, second_value: int) -> int:
         Product of elements
     """
     pass
-    if (isinstance(first_value, int) and isinstance(second_value, int)) == True:
+    if isinstance(first_value, int) and isinstance(second_value, int):
         return first_value * second_value
     else:
         raise ValueError
@@ -118,6 +118,7 @@ def some_loop_exercise() -> list:
     """
     pass
     return [i for i in range(13) if i not in [6, 7]]
+
 
 def remove_from_list_all_negative_numbers(data: List[int]) -> list:
     """
