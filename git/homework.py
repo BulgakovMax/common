@@ -47,7 +47,7 @@ def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
     If @first and @second has same type should return True
     In another case should return False
     """
-    pass
+    
 
 
 def multiple_ints(first_value: int, second_value: int) -> int:
@@ -204,4 +204,4 @@ def simple_sort(data: List[int]) -> List[list]:
     Returns:
 
     """
-    pass
+    print('Done!')
