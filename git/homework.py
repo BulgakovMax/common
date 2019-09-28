@@ -184,18 +184,16 @@ def alphabet() -> dict:
 
 
 def simple_sort(data: List[int]) -> List[list]:
-    new_list = []
-    my_list = data.copy()
+    length = len(data)
+    for i in range(0, length - 1):
+        for j in range(0, length - 1 - i):
+            if data[j + 1] < data[j]:
+                t = data[j + 1]
+                data[j + 1] = data[j]
+                data[j] = t
+    return data
 
-    while my_list:
-        minimum = my_list[0]
-        for x in my_list:
-            if x < minimum:
-                minimum = x
-        new_list.append(minimum)
-        my_list.remove(minimum)
-
-    print(new_list)
+    
     """
     Sort list of ints without using built-in methods.
     Examples:
