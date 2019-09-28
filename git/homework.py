@@ -7,7 +7,7 @@ from typing import List
 
 
 class OurAwesomeException(Exception):
-    pass
+    
 
 
 def is_two_object_has_same_value(first: Any, second: Any) -> bool:
