@@ -22,7 +22,6 @@ def task_1_add_new_record_to_db(con) -> None:
         cursor.execute('''INSERT INTO Customers(CustomerName, ContactName, 
                           Address, City, Postalcode, Country) 
                           VALUES('Thomas', 'David', 'Some Address', 'London', '774', 'Singapore')''')
-    cursor.close()
 
 
 def task_2_list_all_customers(cur) -> list:
@@ -131,7 +130,7 @@ def task_10_list_first_10_customers(cur):
 
     Results: 10 records
     """
-    cur.execute('''SELECT COUNT(CustomerID) FROM Customers HAVING COUNT(CustomerID) < 11''')
+    cur.execute('''SELECT * FROM customers LIMIT 10''')
     return cur.fetchall()
 
 
@@ -186,7 +185,7 @@ def task_14_list_products_with_supplier_information(cur):
     Returns: 77 records
     """
     cur.execute('''SELECT ProductID, ProductName, Unit, Price, Country, City, SupplierName FROM Products 
-                   INNER JOIN Suppliers ON Suppliers.SupplierID = Products.SupplierID''')
+                   LEFT JOIN Suppliers ON Suppliers.SupplierID = Products.SupplierID''')
     return cur.fetchall()
 
 
@@ -200,7 +199,7 @@ def task_15_list_customers_with_any_order_or_not(cur):
     Returns: 213 records
     """
     cur.execute('''SELECT CustomerName, ContactName, Country, OrderID FROM Customers 
-                   INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID''')
+                   LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID''')
     return cur.fetchall()
 
 
