@@ -60,7 +60,7 @@ class TestForRectangle(unittest.TestCase):
             self.rectangle2.get_radius_of_inscribed_circle()
         with self.assertRaises(ValueError):
             self.rectangle3.get_radius_of_inscribed_circle()
-            
+
 
 if __name__ == '__main__':
     unittest.main()
