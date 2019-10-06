@@ -5,11 +5,12 @@ from homework import Rectangle
 
 class TestForRectangle(unittest.TestCase):
 
+
     def setUp(self) -> None:
         self.rectangle1 = Rectangle(6, 8)
         self.rectangle2 = Rectangle(6, 6)
         self.rectangle3 = Rectangle(0, 0)
-        
+
 
     def test_get_rectangle_perimeter(self):
         self.assertEqual(self.rectangle1.get_rectangle_perimeter(), 28)
