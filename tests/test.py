@@ -53,12 +53,12 @@ class TestForRectangle(unittest.TestCase):
 
 
     def test_radius_of_inscribed_circle(self):
-        self.assertEqual(self.rectangle1.get_radius_of_inscribed_circle(),  math.sqrt(100) / (2 * math.sqrt(2)))
+        self.assertEqual(self.rectangle2.get_radius_of_inscribed_circle(),  math.sqrt(72) / (2 * math.sqrt(2)))
 
 
     def get_radius_of_inscribed_circle_false(self):
         with self.assertRaises(ValueError):
-            self.rectangle2.get_radius_of_inscribed_circle()
+            self.rectangle1.get_radius_of_inscribed_circle()
         with self.assertRaises(ValueError):
             self.rectangle3.get_radius_of_inscribed_circle()
 
