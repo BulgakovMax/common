@@ -120,7 +120,7 @@ class Cheetah(Cat):
             return 75
         elif self.age > 15:
             return 40
-
+        
 
 class Wall:
     """
