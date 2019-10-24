@@ -8,16 +8,6 @@ def main_page():
     return render_template('home.html')
 
 
-@app.route('/base')
-def base_page():
-    return render_template('base.html')
-
-
-@app.route('/home')
-def home_page():
-    return render_template('home.html')
-
-
 @app.route('/vegetables')
 def vegetables_page():
     list = ['beans', 'carrot', 'beetroot', 'cucumber']
