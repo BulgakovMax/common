@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "author.html" %}
+
+{% block header %}
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <h1 style="color:red;"> {{ data[2].get("title", 2) }}</h1>
 </head>
+{% endblock %}
+
+{% block content %}
 <body>
 
+
+<div id="IPod">
+    <img src="{{url_for('static', filename='IPod.jpg')}}" width="300px" height="400px">
+</div>
+<br>
+{{ data[2].get("text", 2) }}
+
+<p> This number "{{ data[2].get("text", 2).split(' ')|length }}" indicates the number of words in the text above.</p>
+
 </body>
-</html>
+
+{% endblock %}
