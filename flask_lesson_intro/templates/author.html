@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block header %}
+    <meta charset="UTF-8">
+    <title>Author page</title>
+    {% endblock %}
+
+    <!--Navbar-->
+    <nav class=" bg-dark navbar  navbar-expand-lg navbar-dark primary-color">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">Navbar</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/author">Author page</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Alarm_clock">Alarm clock</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li><li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Battery_page">Battery charger</a>
+                </li>
+
+
+            </ul>
+
+        </div>
+        <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
+</head>
+<style>
+    #images {
+        text-align: center;
+    }
+
+    *:focus {
+        outline: 0;
+    }
+body {
+    background-image: url(static/cursor.jpg);
+    background-repeat:no-repeat;
+    background-position: center center;
+      }
+
+
+
+
+
+
+
+
+
+</style>
+<body>
+
+{% block content %}
+<h2>
+    <p> "I did it with little looking to the previous homework and my notes! ” </p>
+    <br>
+    <a href="https://github.com/BulgakovMax/common"> Bulgakov Max GitHab link</a>
+</h2>
+{% endblock %}
+
+<!-- Footer -->
+<footer class="page-footer font-small teal pt-4">
+
+    <!-- Footer Text -->
+    <div class="container-fluid text-center text-md-left">
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-md-6 mt-md-0 mt-3">
+
+                <!-- Content -->
+                <h5 class="text-uppercase font-weight-bold"> get_author_page() </h5>
+                <p>get_author_page()</p>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none pb-3">
+
+            <!-- Grid column -->
+            <div class="col-md-6 mb-md-0 mb-3">
+
+                <!-- Content -->
+                <h3 class="text-uppercase font-weight-bold">Links map</h3>
+                <p>&spades;<a href="author"> Author page </a> &spades;
+                    <a href="Alarm_clock"> Alarm clock </a> &spades;
+                    <a href="Headphones"> Headphones </a> &spades;
+                    <a href="IPod"> IPod</a>&spades;
+                    <a href="Calculator"> Calculator </a>&spades;
+                    <a href="Coffeemaker"> Coffeemaker </a>&spades;
+                    <a href="Battery_charger"> Battery charger</a>&spades;
+                </p>
+
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+    </div>
+    <!-- Footer Text -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</body>
+</html>
