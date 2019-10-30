@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block header %}
+<head>
+    <meta charset="UTF-8">
+    <title>Fruitss</title>
+        <style>
+   h2 {
+    background: #FFFF00;
+    color: red;
+    padding: 2px;
+   }
+
+    </style>
+</head>
+{% endblock %}
+
+{% block content %}
+<h2>
+    <ol>
+        {% for frut in list %}
+        {% if frut == 'strawberry'%}
+        <li><a href="#" style="color:red">{{ frut }}</a></li>
+        {% else %}
+        <li><a href="#">{{ frut }}</a></li>
+        {% endif %}
+
+        {% endfor %}
+    </ol>
+        <br>
+    <a href="javascript:window.history.back()">Back</a>
+</h2>
+{% endblock %}
