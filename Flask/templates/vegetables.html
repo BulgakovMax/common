@@ -5,32 +5,26 @@
     <title>Vegetables</title>
     <style>
    h2 {
-    background: #D9FFAD; /* Цвет фона под заголовком */
-    color: green; /* Цвет текста */
-    padding: 2px; /* Поля вокруг текста */
+    background: #D9FFAD;
+    color: green;
+    padding: 2px;
    }
-
     </style>
 </head>
 {% endblock %}
 
 {% block content %}
-
 <h2>
     <ol>
-
         {% for veg in list %}
         {% if veg == 'beetroot'%}
-        <li><a href="#">{{ veg.upper() }}</a></li>
+        <li>{{ veg.upper() }}</li>
         {% else %}
-        <li><a href="#">{{ veg}}</a></li>
+        <li>{{ veg}}</li>
         {% endif %}
-
         {% endfor %}
     </ol>
     <br>
     <a href="javascript:window.history.back()">Back</a>
 </h2>
-
-
 {% endblock %}
