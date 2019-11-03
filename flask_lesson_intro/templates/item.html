@@ -1,0 +1,12 @@
+{% extends "author.html" %}
+
+{% block header %}
+<p><h1 align="center">{{title}}</h1></p>
+{% endblock %}
+{% block content %}
+<div {{title}}>
+    <img src="{{url_for('static', filename=image)}}" width="400px" height="400px">
+</div>
+<p>{{text}}</p>
+<p> This number "{{ text.split(' ')|length() }}" indicates the number of words in the text above.</p>
+{% endblock %}
