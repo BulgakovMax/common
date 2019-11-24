@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% block main %}
+<br>
+<ul>
+    <li>
+        <a href="{{ url_for('product.get_all_products') }}">Product</a>
+    </li>
+    <li>
+        <a href="{{ url_for('supermarket.get_all_supermarkets') }}">Supermarkets</a>
+    </li>
+</ul>
+<br>
+{% endblock %}

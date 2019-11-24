@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block main %}
+    <br>
+    <a href="javascript:history.back()"> <-- Go Back</a>
+    <br>
+    <br>
+    <h1>{{ name }}</h1>
+    <img src="{{ url_for('product.static', filename=img_name) }}" alt="{{ name }}" width="200" height="200" >
+    <div><strong>Name:</strong> {{ name }}</div>
+    <div><strong>Price:</strong> {{ price }}</div>
+    <div><strong>Description:</strong> {{ description }}</div>
+
+
+    <br>
+    <a href="{{url_for('product.get_all_products')}}">All products</a>
+{% endblock %}

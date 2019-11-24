@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block main %}
+    <br>
+    <a href="javascript:history.back()"> <-- Go Back</a>
+    <br>
+    <br>
+    <h1>{{ name }}</h1>
+    <img src="{{ url_for('supermarket.static', filename=img_name) }}" alt="{{ name }}" width="200" height="200" >
+    <div><strong>Name:</strong> {{ name }}</div>
+    <div><strong>Location:</strong> {{ location }}</div>
+
+
+    <br>
+    <a href="{{url_for('supermarket.get_all_supermarkets')}}">All supermarkets</a>
+{% endblock %}

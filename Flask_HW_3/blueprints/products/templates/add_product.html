@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+
+{% block main %}
+    <br>
+    <a href="javascript:history.back()"> <-- Go Back</a>
+    <br>
+    <br>
+    <div>Add new product:</div>
+    <br>
+    <form action="" method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.product_name.label }}
+            {{ form.product_name(size=23) }}
+            {% for error in form.product_name.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.product_price.label }}
+            {{ form.product_price(size=24) }}
+            {% for error in form.product_price.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.product_description.label }}
+            {{ form.product_description }}
+            {% for error in form.product_description.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.product_image }}
+        </div>
+        <br>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+    <br>
+    <a href="{{url_for('product.get_all_products')}}"> Back to products</a>
+    <br>
+{% endblock %}
