@@ -6,10 +6,8 @@
         <style>
    h2 {
     background: #FFFF00;
-    color: red;
     padding: 2px;
    }
-
     </style>
 </head>
 {% endblock %}
@@ -19,11 +17,10 @@
     <ol>
         {% for frut in list %}
         {% if frut == 'strawberry'%}
-        <li><a href="#" style="color:red">{{ frut }}</a></li>
+        <li style="color:red">{{ frut }}</li>
         {% else %}
-        <li><a href="#">{{ frut }}</a></li>
+        <li>{{ frut }}</li>
         {% endif %}
-
         {% endfor %}
     </ol>
         <br>
