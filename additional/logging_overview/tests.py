@@ -1,4 +1,5 @@
 import unittest
+from unittest import mock
 
 import testfixtures
 
@@ -7,6 +8,7 @@ from main import pay_developer
 
 class TestDevelopersSalary(unittest.TestCase):
 
+    @mock.patch('builtins.input', lambda *args: 'y')
     def test_normal_salary(self):
         with testfixtures.LogCapture() as logs:
             pay_developer(180)
