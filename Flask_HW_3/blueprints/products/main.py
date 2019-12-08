@@ -1,4 +1,6 @@
-from flask import Blueprint, render_template, request, url_for, redirect, session
+import uuid
+
+from flask import Blueprint, render_template, request, url_for, redirect, session, flash
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField, FileField, validators, FloatField
 from wtforms.validators import DataRequired
@@ -15,7 +17,7 @@ product = Blueprint('product',
 class AddProductForm(FlaskForm):
     product_name = StringField('Name of product:', validators=[DataRequired()])
     product_description = TextAreaField('Description of product:', validators=[DataRequired()])
-    product_price = StringField('Price of product:', validators=[DataRequired()])
+    product_price = FloatField('Price of product:', [validators.number_range(0, 1000)])
     product_image = FileField()
     submit = SubmitField('Add product')
 
@@ -40,12 +42,12 @@ def get_all_products():
                                )
 
 
-@product.route('/product/<id>', methods=['GET'])
-def get_product(id):
+@product.route('/product/<prod_id>', methods=['GET'])
+def get_product(prod_id):
     list_of_products = get_data("blueprints/products/products.json")
     for product in list_of_products:
-        session[id + product['name']] = 'visited'
-        if product['id'] == id:
+        session[prod_id + product['name']] = 'visited'
+        if product['id'] == prod_id:
             return render_template(
                 'product.html',
                 name=product['name'],
@@ -61,7 +63,7 @@ def get_product(id):
 def add_product():
     form = AddProductForm()
     products_list = get_data("blueprints/products/products.json")
-    product_id = str(int(products_list[len(products_list) - 1]['id']) + 1) if len(products_list) else "1"
+    product_id = str(uuid.uuid4())
     if request.method == 'POST':
         if form.validate_on_submit():
             data = {

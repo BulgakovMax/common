@@ -8,11 +8,11 @@
     {% if list_of_products %}
         <ul>
             {% for product in list_of_products %}
-                {% set id = product['id'] %}
+                {% set prod_id = product['id'] %}
                 {% set name = product['name'] %}
                 <li>
-                    <a {% if session[id + name]=="visited" %} style="pointer-events: none; color: #cecece;"{% endif %}
-                       href="{{url_for('product.get_product', id=id)}}">{{ name }}
+                    <a {% if session[prod_id + name]=="visited" %} style="pointer-events: none; color: #cecece;"{% endif %}
+                       href="{{url_for('product.get_product', prod_id=prod_id)}}">{{ name }}
                     </a>
                 </li>
             {% endfor %}
@@ -28,4 +28,3 @@
     <br>
     <br>
 {% endblock %}
-

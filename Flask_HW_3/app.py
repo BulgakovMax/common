@@ -10,7 +10,6 @@ app.register_blueprint(supermarket)
 app.register_blueprint(product)
 
 
-
 app.config['SESSION_TYPE'] = 'filesystem'
 app.permanent_session_lifetime = timedelta(seconds=30)
 

@@ -1,3 +1,5 @@
+import uuid
+
 from flask import Blueprint, render_template, request, url_for, redirect, session
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField, FileField, validators, FloatField
@@ -38,12 +40,12 @@ def get_all_supermarkets():
                                )
 
 
-@supermarket.route('/supermarket/<id>', methods=['GET'])
-def get_supermarket(id):
+@supermarket.route('/supermarket/<super_id>', methods=['GET'])
+def get_supermarket(super_id):
     list_of_supermarkets = get_data("blueprints/supermarkets/supermarkets.json")
     for supermarket in list_of_supermarkets:
-        if supermarket['id'] == id:
-            session[id + supermarket['name']] = 'visited'
+        if supermarket['id'] == super_id:
+            session[super_id + supermarket['name']] = 'visited'
             return render_template(
                 'supermarket.html',
                 name=supermarket['name'],
@@ -58,7 +60,7 @@ def get_supermarket(id):
 def add_supermarket():
     form = AddSupermarketForm()
     supermarket_list = get_data("blueprints/supermarkets/supermarkets.json")
-    supermarket_id = str(int(supermarket_list[len(supermarket_list) - 1]['id']) + 1) if len(supermarket_list) else "1"
+    supermarket_id = str(uuid.uuid4())
     if request.method == 'POST':
         if form.validate_on_submit():
             data = {

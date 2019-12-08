@@ -8,11 +8,11 @@
     {% if list_of_supermarkets %}
         <ul>
             {% for supermarket in list_of_supermarkets %}
-                {% set id = supermarket['id'] %}
+                {% set super_id = supermarket['id'] %}
                 {% set name = supermarket['name'] %}
                 <li>
-                    <a {% if session[id + name]=="visited" %} style="pointer-events: none; color: #cecece;"{% endif %}
-                       href="{{url_for('supermarket.get_supermarket', id=id)}}">{{ name }}
+                    <a {% if session[super_id + name]=="visited" %} style="pointer-events: none; color: #cecece;"{% endif %}
+                       href="{{url_for('supermarket.get_supermarket', super_id=super_id)}}">{{ name }}
                     </a>
                 </li>
             {% endfor %}
@@ -28,4 +28,3 @@
     <br>
     <br>
 {% endblock %}
-
